@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { SunMedium, Lock, ArrowRight, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase"; // <-- We import the real database client
 
 export default function LoginPage() {
   const router = useRouter();
@@ -22,6 +22,7 @@ export default function LoginPage() {
     setIsLoading(true);
     setError("");
 
+    // REAL SUPABASE AUTHENTICATION
     const { data, error: authError } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
@@ -34,6 +35,7 @@ export default function LoginPage() {
     }
 
     if (data.session) {
+      // Success! Teleport them to the dashboard
       router.push("/dashboard");
     }
   };
@@ -82,13 +84,9 @@ export default function LoginPage() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password" className="text-slate-300">Access PIN</Label>
-                <button 
-                  type="button"
-                  onClick={() => alert("For security purposes, please contact your Zero Solar Account Manager to reset your society's Access PIN.")}
-                  className="text-xs text-primary hover:underline bg-transparent border-none cursor-pointer"
-                >
+                <Link href="#" className="text-xs text-primary hover:underline">
                   Forgot PIN?
-                </button>
+                </Link>
               </div>
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-500" />
