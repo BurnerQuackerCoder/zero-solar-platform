@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { SunMedium, LayoutDashboard, FileText, Settings, LogOut } from "lucide-react";
+import { LogoutButton } from "@/components/dashboard/LogoutButton";
 
 export default function DashboardLayout({
   children,
@@ -11,12 +12,13 @@ export default function DashboardLayout({
     <div className="flex min-h-screen bg-slate-950">
       {/* Sidebar Navigation */}
       <aside className="w-64 border-r border-slate-800 bg-slate-900/50 hidden md:block">
-        <div className="h-16 flex items-center px-6 border-b border-slate-800">
+        {/* WRAPPED LOGO IN LINK */}
+        <Link href="/" className="h-16 flex items-center px-6 border-b border-slate-800 hover:bg-slate-800/50 transition-colors">
           <SunMedium className="h-6 w-6 text-primary mr-2" />
           <span className="text-lg font-bold text-white tracking-tight">
             ZERO<span className="text-primary">SOLAR</span>
           </span>
-        </div>
+        </Link>
         
         <nav className="p-4 space-y-2">
           <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4 mt-4 px-2">
@@ -37,10 +39,8 @@ export default function DashboardLayout({
         </nav>
 
         <div className="absolute bottom-0 w-64 p-4 border-t border-slate-800">
-          <Link href="/" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white transition-colors">
-            <LogOut className="h-4 w-4" />
-            <span className="font-medium text-sm">Sign Out</span>
-          </Link>
+          {/* REPLACED STATIC LINK WITH REAL LOGOUT BUTTON */}
+          <LogoutButton />
         </div>
       </aside>
 

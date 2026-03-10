@@ -7,12 +7,13 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
+        {/* WRAPPED LOGO IN LINK */}
+        <Link href="/" className="flex items-center gap-2 transition-transform hover:scale-105">
           <SunMedium className="h-6 w-6 text-primary" />
           <span className="text-xl font-bold tracking-tight text-white">
             ZERO<span className="text-primary">SOLAR</span>
           </span>
-        </div>
+        </Link>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
           <Link href="#model" className="hover:text-primary transition-colors">Our Model</Link>
