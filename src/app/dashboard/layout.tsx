@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { SunMedium, LayoutDashboard, FileText, Settings, LogOut } from "lucide-react";
 import { LogoutButton } from "@/components/dashboard/LogoutButton";
+import { MobileNav } from "@/components/dashboard/MobileNav";
+
 
 export default function DashboardLayout({
   children,
@@ -45,12 +47,22 @@ export default function DashboardLayout({
       {/* Added print:overflow-visible to prevent print cutoff */}
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden print:overflow-visible">
         
-        {/* Added print:hidden to hide top header on paper */}
-        <header className="h-16 flex items-center justify-between px-8 border-b border-slate-800 bg-background/95 backdrop-blur print:hidden">
-          <h1 className="text-lg font-semibold text-white">Vikhroli Heights CHS - Tower A</h1>
+        {/* Updated Header for Mobile Responsiveness */}
+        <header className="h-16 flex items-center justify-between px-4 md:px-8 border-b border-slate-800 bg-background/95 backdrop-blur print:hidden relative z-40">
+          <div className="flex items-center gap-3">
+            {/* This will only show on mobile */}
+            <MobileNav />
+            
+            {/* Truncate long society names on small phones */}
+            <h1 className="text-sm md:text-lg font-semibold text-white truncate max-w-[200px] md:max-w-none">
+              Vikhroli Heights CHS
+            </h1>
+          </div>
+          
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">System Online</span>
+            {/* Hide the "System Online" text on tiny screens to save space, just keep the green dot */}
+            <span className="hidden sm:inline text-xs font-medium text-slate-400 uppercase tracking-wider">System Online</span>
           </div>
         </header>
         
