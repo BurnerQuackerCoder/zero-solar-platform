@@ -84,9 +84,13 @@ export default function LoginPage() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password" className="text-slate-300">Access PIN</Label>
-                <Link href="#" className="text-xs text-primary hover:underline">
+                <button 
+                  type="button"
+                  onClick={() => alert("For security purposes, please contact your Zero Solar Account Manager to reset your society's Access PIN.")}
+                  className="text-xs text-primary hover:underline bg-transparent border-none cursor-pointer"
+                >
                   Forgot PIN?
-                </Link>
+                </button>
               </div>
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-4 w-4 text-slate-500" />

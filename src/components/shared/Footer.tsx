@@ -19,7 +19,7 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed">
-              Mumbai's premier infrastructure management firm, deploying zero-CapEx renewable energy assets for high-rise communities.
+              Mumbai&apos;s premier infrastructure management firm, deploying zero-CapEx renewable energy assets for high-rise communities.
             </p>
           </div>
 
@@ -52,8 +52,8 @@ export const Footer = () => {
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {currentYear} Zero Solar Assets Pvt Ltd. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

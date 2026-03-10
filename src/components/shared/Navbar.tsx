@@ -27,9 +27,11 @@ export const Navbar = () => {
               Client Portal
             </Button>
           </Link>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Get Proposal
-          </Button>
+          <a href="mailto:hello@zerosolar.in?subject=Solar%20Proposal%20Request">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+              Get Proposal
+            </Button>
+          </a>
         </div>
       </div>
     </nav>
