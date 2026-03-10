@@ -50,8 +50,8 @@ export default function InvoicesHub() {
           <CardTitle className="text-white text-lg">Recent Bills (Last 3 Months)</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="rounded-md border border-slate-800 overflow-hidden">
-            <table className="w-full text-sm text-left">
+          <div className="rounded-md border border-slate-800 overflow-x-auto">
+            <table className="w-full min-w-[700px] text-sm text-left">
               <thead className="bg-slate-900/80 text-slate-400 border-b border-slate-800">
                 <tr>
                   <th className="px-4 py-3 font-medium">Invoice ID</th>
