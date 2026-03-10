@@ -34,7 +34,7 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
         <PrintButton />
       </div>
 
-      <div className="max-w-4xl mx-auto border border-slate-200 p-12 shadow-sm bg-white rounded-sm">
+      <div className="max-w-4xl mx-auto border border-slate-200 p-12 shadow-sm bg-white rounded-sm print:border-none print:shadow-none print:p-0">
         <div className="flex justify-between items-start mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
